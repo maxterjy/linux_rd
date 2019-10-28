@@ -1,0 +1,34 @@
+fork():
+	- seperated memory between parent and child process
+	- child routine begin from fork
+	- parent does NOT wait for child terminate
+
+
+zoombie process:
+	- terminated. But, still in process table
+	- parent need to call wait() or waitpid() to fetch child exit status
+		and also release child zoombie process
+
+
+wait():
+	- suspend the calling process until one of its children terminates
+
+	- WIFEXITED: check if child terminate by exit
+	- WEXITSTATUS: get exit code
+
+	- WIFSIGNAL: check if child terminate by signal
+	- WTERSIG: get signal code
+
+
+waitpid():
+	- WNOHANG: return immediately if no child has terminated
+		- use with while loop to get child status usually
+
+		- pros: NOT suspend calling process
+		- cons: need to fetch on time when child terminate
+
+		- sample: waitpid/wnohang.c
+
+	
+
+
