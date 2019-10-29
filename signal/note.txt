@@ -1,0 +1,28 @@
+signal mask:
+	- set of signals that currently blocked from delivery to thread
+
+
+sigprocmask():
+	- fetch/change signal mask of calling thread
+	
+	- sample:
+		- sigprocmask/block_sigint.c: block SIGINT signal
+		- sigprocmask/fetch_signal_mask.c: fetch signal mask, show the signal in it
+		- sigprocmask/unblock_signal.c: unblock SIGINT signal
+
+pending mask:
+	- set of signals that raised while blocked
+	- pending until signal is unblocked
+
+sigpending()
+	- sample:
+		- sigpending/pending_sigint: raise SIGINT while blocked
+
+sigaction()
+	- change callback behavior when catch a specific signal
+	- if sa_flag=SA_SIGINFO, must use sa_sigaction() callback
+	- otherwise, use sa_handler() callback
+
+	- sample:
+		- sigaction/sa_sigaction.c: combine SA_SIGINFO, sa_sigaction()
+		- sigaction/sa_handler.c: use sa_handler()
