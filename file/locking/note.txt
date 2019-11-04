@@ -1,0 +1,25 @@
+flock():
+	- lock entire file
+	- flock() is a slow system call
+
+	- shared/exclusive
+		- LOCK_SH: multiple processes can lock a file at the same time
+		- LOCK_EX: only one process lock a file at a time
+
+	- blocking/non-blocking
+		- default: block the execution until acquire lock
+		- LOCK_NB: non-block, return an errno if can not acquire lock
+		- sample: locking/flock/demo.c
+
+	- flock() and dup()
+		- old and new file descriptor point to the same file description
+		- use the same lock
+		- sample: locking/flock/demo_dup.c
+
+	- flock() and fork()
+		- parent and child file descriptor point to same file description
+		- because parent keeping lock, child process enter blocking state
+		- child must unlock manually the lock to access the file
+
+	
+		
