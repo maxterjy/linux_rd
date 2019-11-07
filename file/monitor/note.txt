@@ -1,0 +1,16 @@
+two type of monitor:
+	- Level-triggered monitor: check if file descriptor ready to call I/O function without blocking				
+	- Edge-triggered monitor: check if there is I/O activity on a file descriptor since it was last monitored
+
+
+select() and poll() to check if an I/O operation would not block rather than it wourld successfully transfer data
+
+select(nfds, readfds, writefds, exceptfds, timeout):
+	- level-triggered monitor
+	- sample: select_stdin.c
+
+poll(fds, nfds, timeout)
+	- level-trigger & edge-trigger
+	- sample: pollin_pipe.c
+
+
