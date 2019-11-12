@@ -29,6 +29,33 @@ waitpid():
 
 		- sample: waitpid/wnohang.c
 
+
+- PID: process id
+- PPID: parent process id
+- PGID: process group id
+	- the first process of group
+- SID: session id
+	- process id of terminal or bin/bash
+	- terminal process's id is different each time we start
+
+
+setsid(0):
+	- create new session if the calling process is not a process group leader
+	- the calling process become session leader and group leader
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	
 
 
