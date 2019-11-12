@@ -1,9 +1,0 @@
-Build:
-	gcc server.c -o server
-	gcc client.c -o client
-	
-
-Run:
-	./server
-	./client
-
