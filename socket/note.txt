@@ -1,3 +1,14 @@
+- fast system calls return immediately
+- slow system calls (blocking system call) will not return until some external events happens
+
+- read/recv* is slow system call
+- write/send* is fast system call 
+
+
+
+
+
+
 sample:
 	TCP
 	- tcp/serial:
